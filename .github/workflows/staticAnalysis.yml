@@ -1,4 +1,4 @@
-name: test-and-build
+name: static-analysis
 on:
   pull_request:
     types: [opened, synchronize, reopened]
@@ -7,8 +7,9 @@ on:
     paths-ignore:
       - '.github/**'
 jobs:
-  build:
-    name: Build
+  static-analysis:
+    needs: unit-tests
+    name: Static analysis
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
