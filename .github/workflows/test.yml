@@ -29,6 +29,7 @@ jobs:
           name: serving-web-content-complete-${{ env.PROJECT_VERSION }}.jar
           path: target/serving-web-content-complete-${{ env.PROJECT_VERSION }}.jar
   build-container:
+    needs: build-jar
     name: Build a Docker container
     runs-on: ubuntu-latest
     steps:
