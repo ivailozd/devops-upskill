@@ -1,9 +1,8 @@
 name: Build
 env:
-  ARTIFACT_NAME_PREFIX: 'serving-web-content-complete-'
+  ARTIFACT_NAME_PREFIX: 'devops-upskill-'
 on:
-  pull_request:
-    types: [opened, synchronize, reopened]
+  push:
     branches:
       - main
     paths-ignore:
