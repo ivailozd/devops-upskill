@@ -2,8 +2,7 @@ name: Test and Verify
 on:
   pull_request:
     types: [opened, synchronize, reopened]
-    branches:
-      - main
+    branches: [main, develop]
     paths-ignore:
       - '.github/**'
 jobs:
