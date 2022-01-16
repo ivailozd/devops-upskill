@@ -3,8 +3,7 @@ env:
   ARTIFACT_NAME_PREFIX: 'devops-upskill-'
 on:
   push:
-    branches:
-      - main
+    branches: [main, develop]
     paths-ignore:
       - '.github/**'
 jobs:
@@ -56,6 +55,6 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           context: .
-          push: ${{ GitHub.event_name == 'pull_request' }}
+          push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
