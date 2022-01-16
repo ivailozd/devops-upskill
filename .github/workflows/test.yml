@@ -1,0 +1,42 @@
+name: Build
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+    branches:
+      - main
+    paths-ignore:
+      - '.github/**'
+jobs:
+  build-jar:
+    name: Build JAR
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Set up JDK 17
+        uses: actions/setup-java@v2
+        with:
+          distribution: 'zulu'
+          java-version: 17
+          cache: 'maven'
+      - name: Build with Maven
+        run: |
+          echo "PROJECT_VERSION=$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout)" >> $GITHUB_ENV
+          mvn -B package -DskipTests --file pom.xml
+      - name: Upload JAR
+        uses: actions/upload-artifact@v2
+        with:
+          name: serving-web-content-complete-${{ env.PROJECT_VERSION }}.jar
+          path: target/serving-web-content-complete-${{ env.PROJECT_VERSION }}.jar
+  build-container:
+    name: Build a Docker container
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Download the artifact
+        uses: actions/download-artifact@v2
+        with:
+          name: serving-web-content-complete-*
+      - name: Display structure of downloaded files
+        run: ls -R
