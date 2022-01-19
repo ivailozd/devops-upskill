@@ -26,6 +26,7 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=ivailozd_devops-upskill
   security:
+    name: Dependencies check
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
