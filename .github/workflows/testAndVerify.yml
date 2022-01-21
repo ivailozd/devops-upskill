@@ -35,7 +35,7 @@ jobs:
           distribution: 'zulu'
           java-version: 17
           cache: 'maven'
-      - name: Test and analyze
+      - name: Analyze
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
