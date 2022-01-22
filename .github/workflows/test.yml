@@ -26,10 +26,10 @@ jobs:
         with:
           name: ${{ env.ARTIFACT_NAME }}-${{ env.PROJECT_VERSION }}.jar
           path: target/${{ env.ARTIFACT_NAME }}-${{ env.PROJECT_VERSION }}.jar
-      -name : ls
-      run: |
-        ls -lh
-        ls -lh target
+      - name : ls
+        run: |
+          ls -lh
+          ls -lh target
       - name: Push JAR
         uses: advancedcsg-open/action-jfrog-cli@master
         with:
