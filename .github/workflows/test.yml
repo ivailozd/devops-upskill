@@ -29,7 +29,7 @@ jobs:
       - name: Push JAR
         uses: advancedcsg-open/action-jfrog-cli@master
         with:
-          url: 'https://ivailozd.jfrog.io'
+          url: "https://ivailozd.jfrog.io/"
           credentials type: 'apikey'
           apikey: ${{ secrets.JF_ARTIFACTORY_SECRET_1 }}
           args: u "target/${{ env.ARTIFACT_NAME }}-${{ env.PROJECT_VERSION }}.jar" "default-maven-local/"
