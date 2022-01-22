@@ -1,5 +1,4 @@
 # devops-upskill
-
 Final project - [Upskill DevOps](https://www.telerikacademy.com/upskill/devops)
 
 This repo introduces CI in the [Gitflow workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow) branching strategy. 
@@ -10,17 +9,33 @@ The aim is to guarantee the delivered software's quality and make the deployment
 - automation of the artifact's building and deployment
 - automation of the container's building and deployment
 
-##Scenarios
+## Feature delivery - VSM
 
-###Merging a `feature` branch to `develop`
+Automate the processes in green:
 
-###Releasing a new version 
-####(`main` < `release`)
-####(`develop` < `release`)
+![vsm](./src/main/resources/static/vsm.png)
 
-###Hotfix branches
-####(`main` < `hotfix`)
-####(`develop` < `hotfix`)
+## Scenarios
 
-##End-to-end tests
+### Open a pull request towards `develop` or `main`
+Cases:
+* implement a feature
+* resolve a bug
+* prepare a release
+
+### Push to `main`or `develop`
+Cases:
+* release a new version
+* merge a feature/bug
+
+## End-to-end tests
 https://github.com/ivailozd/devops-upskill-test/
+
+## Things to do
+* trigger `testAndVerify` workflow on push to feature/bug branch
+* deploy the artifacts to a artifactory
+
+## Next goals
+* automate E2E testing
+* follow a simpler branching strategy for simplifying CI
+* implement CD
