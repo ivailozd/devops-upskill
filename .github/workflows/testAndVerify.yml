@@ -5,6 +5,8 @@ on:
     branches: [main, develop]
     paths-ignore:
       - '.github/**'
+  push:
+    branches-ignore: [main, develop]
 jobs:
   tests:
     name: Tests
