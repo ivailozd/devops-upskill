@@ -36,6 +36,6 @@ https://github.com/ivailozd/devops-upskill-test/
 * deploy the artifacts to a artifactory
 
 ## Next goals
-* automate E2E testing
+* automate QE testing
 * follow a simpler branching strategy for simplifying CI
 * implement CD
