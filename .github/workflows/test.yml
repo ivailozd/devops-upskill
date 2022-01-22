@@ -26,10 +26,11 @@ jobs:
         with:
           name: ${{ env.ARTIFACT_NAME }}-${{ env.PROJECT_VERSION }}.jar
           path: target/${{ env.ARTIFACT_NAME }}-${{ env.PROJECT_VERSION }}.jar
-      - name: Push JAR
-        uses: advancedcsg-open/action-jfrog-cli@master
+      - name: Ping Artifactory
+        uses: katcosgrove/jfrog-actions@master
         with:
-          url: "https://ivailozd.jfrog.io/"
-          credentials type: 'apikey'
+          cmd: 'ping'
+        env:
+          auth: 'apikey'
           apikey: ${{ secrets.JF_ARTIFACTORY_SECRET_1 }}
-          args: u "target/${{ env.ARTIFACT_NAME }}-${{ env.PROJECT_VERSION }}.jar" "default-maven-local/"
+          url: 'https://ivailozd.jfrog.io/'
