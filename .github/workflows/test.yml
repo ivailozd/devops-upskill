@@ -30,5 +30,5 @@ jobs:
         uses: jfrog/setup-jfrog-cli@v2
         env:
           JF_ARTIFACTORY_1: ${{ secrets.JF_ARTIFACTORY_SECRET_1 }}
-        run: |
+      - run: |
           jfrog rt u "(*).jar" default-maven-local/{1}/ --recursive=false
