@@ -48,7 +48,7 @@ https://github.com/ivailozd/devops-upskill-test/
 * industry-leading security intelligence database
 
 ### Comparison to others?
-#### WhiteSource
+#### WhiteSource ([link](https://www.whitesourcesoftware.com/))
 pros:
 * highly scalable
 * easy to use developer tools
@@ -56,7 +56,7 @@ pros:
 cons:
 * no trial period
 
-#### Synopsys/Black Duck
+#### Synopsys/Black Duck ([link](https://www.blackducksoftware.com/))
 pros:
 * the best governance solution (audit and risk reporting)
 
@@ -65,7 +65,7 @@ cons:
 * the most expensive
 * reports for scalability issues and high false-positive rate for vulnerabilities
 
-#### Snyk
+#### Snyk ([link](https://snyk.io/))
 pros:
 * straightforward integration into the SDLC
 
@@ -73,8 +73,8 @@ cons:
 * poor governance solution (audit and risk reporting)
 
 ### What configuration do we need?
-Configure the project to Snyk
-Configure a job in [testAndVerify.yml](./.github/workflows/testAndVerify.yml)
+* Configure the project to Snyk
+* Configure a job in [testAndVerify.yml](./.github/workflows/testAndVerify.yml)
 
 ## Bring in SAST (Static application security testing)
 // TODO
