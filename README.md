@@ -40,12 +40,27 @@ https://github.com/ivailozd/devops-upskill-test/
 * keep track of all third-party dependencies' licenses and vulnerabilities
 * fix any issues early in the SDLC
 
+### How to choose?
+An open [guide](https://www.linuxfoundation.org/tools/an-open-guide-to-evaluating-software-composition-analysis-tools/) to evaluating software composition analysis tools.
+#### Evaluation metrics
+1. Knowledge base (size, source languages, package level detection and binary scanners, frequency of update)
+2. Detection capabilities (vulnerabilities ranking, analysis type support - Dependency scanners, Binary scanners, Snippet scanners, License scanners)
+3. Ease of use (Intuitive design and user interface, Requires minimal to no training)
+4. Operational capabilities (Speed of source code scans, Support for different audit models, Build system (CD/CI) agnostic)
+5. Integration capabilities (Provides APIs for easy integration, Support UI integration capabilities)
+6. Security vulnerabilities database (Size and frequency of update, Number of sources, Precision)
+7. Advanced vulnerabilities discovery method - when vulnerable code was copied into a new component
+8. Associated costs (Infrastructure cost, Operational cost, Yearly licensing cost)
+9. Support for deployment models (What information about your code and projects leave your networks?)
+10. Reporting capabilities (Generated or pulled from the knowledge base?, Standard formats?)
+
 ### Why Snyk
 * supports `Java` and `Maven`
-* free and easy for start - just create an accound and configure the project
+* free and easy for a start - just create an account and configure the project
 * easy integration with Git and the developer's IDE
 * automated fix pull requests
-* industry-leading security intelligence database
+* "industry-leading security intelligence database" - frequently updated
+* test and automated PR periodically
 
 ### Comparison to others?
 #### WhiteSource ([link](https://www.whitesourcesoftware.com/))
@@ -59,11 +74,11 @@ cons:
 #### Synopsys/Black Duck ([link](https://www.blackducksoftware.com/))
 pros:
 * the best governance solution (audit and risk reporting)
+* variety of databases, including the National Vulnerability Database
 
 cons:
 * no trial period
 * the most expensive
-* reports for scalability issues and high false-positive rate for vulnerabilities
 
 #### Snyk ([link](https://snyk.io/))
 pros:
