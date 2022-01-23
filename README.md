@@ -15,7 +15,7 @@ Automate the processes in green:
 
 ![vsm](./src/main/resources/static/vsm.png)
 
-## Scenarios
+## Workflows
 
 ### Open a pull request towards `develop` or `main`
 Cases:
@@ -35,13 +35,59 @@ Cases:
 ## End-to-end tests
 https://github.com/ivailozd/devops-upskill-test/
 
+## Bring in SCA (Software composition analysis)
+### Why SCA?
+* keep track of all third-party dependencies' licenses and vulnerabilities
+* fix any issues early in the SDLC
+
+### Why Snyk
+* supports `Java` and `Maven`
+* free and easy for start - just create an accound and configure the project
+* easy integration with Git and the developer's IDE
+* automated fix pull requests
+* industry-leading security intelligence database
+
+### Comparison to others?
+#### WhiteSource
+pros:
+* highly scalable
+* easy to use developer tools
+
+cons:
+* no trial period
+
+#### Synopsys/Black Duck
+pros:
+* the best governance solution (audit and risk reporting)
+
+cons:
+* no trial period
+* the most expensive
+* reports for scalability issues and high false-positive rate for vulnerabilities
+
+#### Snyk
+pros:
+* straightforward integration into the SDLC
+
+cons:
+* poor governance solution (audit and risk reporting)
+
+### What configuration do we need?
+Configure the project to Snyk
+Configure a job in [testAndVerify.yml](./.github/workflows/testAndVerify.yml)
+
+## Bring in SAST (Static application security testing)
+// TODO
+
 ## Things to do
-* deploy the artifacts to a artifactory
+* deploy the artifacts to an artifactory
+* scan the containers for vulnerabilities
 
 ## Next goals
 * automate QE testing
 * follow a more straightforward branching strategy for simplifying CI
 * automate test and staging environments deployment
+* bring in DAST (Dynamic application security testing)
 
 ## Further goals
 * implement CD
