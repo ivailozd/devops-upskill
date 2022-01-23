@@ -23,19 +23,25 @@ Cases:
 * resolve a bug
 * prepare a release
 
+![test-and-verify](./src/main/resources/static/test-and-verify-workflow.png)
+
 ### Push to `main`or `develop`
 Cases:
 * release a new version
 * merge a feature/bug
 
+![build-and-push](./src/main/resources/static/build-and-push-workflow.png)
+
 ## End-to-end tests
 https://github.com/ivailozd/devops-upskill-test/
 
 ## Things to do
-* trigger `testAndVerify` workflow on push to feature/bug branch
 * deploy the artifacts to a artifactory
 
 ## Next goals
 * automate QE testing
-* follow a simpler branching strategy for simplifying CI
+* follow a more straightforward branching strategy for simplifying CI
+* automate test and staging environments deployment
+
+## Further goals
 * implement CD
